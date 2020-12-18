@@ -5,8 +5,8 @@
  * Zwraca 2 - błąd nieprawidłowych rozmiarów macierzy
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
-int i;
-int j = 1;
+//zmiany
+
 				/**
 				 * Tutaj należy umieścić właściwą implemntację.
 				 */
