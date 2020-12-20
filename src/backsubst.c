@@ -5,20 +5,20 @@
  * Zwraca 2 - błąd nieprawidłowych rozmiarów macierzy
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
-//zmiany
 
-				/**
-				 * Tutaj należy umieścić właściwą implemntację.
-				 */
+	int col = mat -> c;
+	int row = mat -> r;
+				
+	for (int w = row - 1; w >= 0; w--) {
+		int sum = 0;
+		
+		for (int k = w + 1; k < col; k++)
+			sum += x -> data[k][0] * mat -> data[w][k]; //dla k = w + 1 nic się nie dzieje, następnym elementom przepisuje się suma iloczynów elementów x[3], x[2], ... oraz współczynniku wiersza w (gdzie teraz jesteśmy)  
+		
+		x -> data[w][0] = (b -> data[w][0] - sum) / mat -> data[w][w]; // mat -> dane[w][w] bo macierz jest kwadratowa
+	}
 
-				/* To ponizej jest przepisaniem b do x. Nalezy to poprawic! */
-
-				int i;
-				for (i =0; i < x->r; i++) {
-								x->data[i][0] = b->data[i][0];
-				}
-
-				return 0;
+	return 0;
 }
 
 
