@@ -8,6 +8,8 @@ int eliminate (Matrix *mat, Matrix *b) {
  	
 	int row = mat -> r;
 	int col  = mat -> c;
+	if (row != col)
+		return 2;
  	for (int k = 0; k < col - 1; k++) {
 		int wmax = k;
 

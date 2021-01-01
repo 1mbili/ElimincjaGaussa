@@ -6,9 +6,16 @@
  * Zwraca 2 - błąd nieprawidłowych rozmiarów macierzy
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
-
+	int i = 0;
 	int col = mat -> c;
 	int row = mat -> r;
+
+	if (row != col)
+	    return 2;
+
+	for (i=0;i<row;i++)
+		if ( mat -> data[i][i] == 0)
+			return 1;
 				
 	for (int w = row - 1; w >= 0; w--) {
 		double sum = 0;

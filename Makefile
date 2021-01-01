@@ -16,8 +16,12 @@ test3: all
 
 test4: all
 	bin/gauss dane/C1 dane/d1
-test_osobliwa: all
+
+test_diagonala: all
 	bin/gauss dane/E dane/e
+
+test_rozmiar: all
+	bin/gauss dane/F dane/f
 
 debug: lldb 
 	lldb bin/gauss dane/C1 dane/d1
