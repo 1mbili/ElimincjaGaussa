@@ -23,5 +23,8 @@ test_diagonala: all
 test_rozmiar: all
 	bin/gauss dane/F dane/f
 
+test_format: all
+	bin/gauss dane/G dane/g
+
 debug: lldb 
 	lldb bin/gauss dane/C1 dane/d1

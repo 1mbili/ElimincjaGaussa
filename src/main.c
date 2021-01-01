@@ -17,10 +17,30 @@ int main(int argc, char ** argv) {
 	printToScreen(b);
 
 	res = eliminate(A,b);
+	if (res == 1){
+		printf("return 1: Macierz osobliwa");
+		freeMatrix(A);
+		freeMatrix(b);
+		return 1;}
+	
 	x = createMatrix(b->r, 1);
+	
+
+	
 	if (x != NULL) {
 		res = backsubst(x,A,b);
-
+		if (res == 1){
+			printf("return 1: Element zerowy na diagonalii");
+			freeMatrix(x);
+			freeMatrix(A);
+			freeMatrix(b);			
+			return 1;}
+		if (res == 2){
+			fprintf(stderr,"return 2: Nieprawidłowy rozmiar macierzy \n");
+			freeMatrix(x);
+			freeMatrix(A);
+			freeMatrix(b);
+			return 2;}
 		printToScreen(x);
 	  freeMatrix(x);
 	} else {
