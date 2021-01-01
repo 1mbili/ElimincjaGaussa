@@ -16,6 +16,8 @@ test3: all
 
 test4: all
 	bin/gauss dane/C1 dane/d1
+test_osobliwa: all
+	bin/gauss dane/E dane/e
 
 debug: lldb 
 	lldb bin/gauss dane/C1 dane/d1
