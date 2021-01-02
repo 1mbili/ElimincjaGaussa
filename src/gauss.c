@@ -3,7 +3,8 @@
 /**
  * Zwraca 0 - elimnacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
- */
+ * Zwraca 2 - macierz jest nie kwadratowa
+  */
 int eliminate (Matrix *mat, Matrix *b) {
  	
 	int row = mat -> r;
