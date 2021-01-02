@@ -3,6 +3,7 @@
 /**
  * Zwraca 0 - elimnacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
+ * Zwraca 2 - różna liczbz kolumn i wierszy
  */
 int eliminate (Matrix *mat, Matrix *b) {
  	
@@ -26,7 +27,7 @@ int eliminate (Matrix *mat, Matrix *b) {
 			mat -> data[k] = mat -> data[wmax];
 			mat -> data[wmax] = rowtmp;
 			
-			double btmp = b -> data[k][0];
+			double btmp = b -> data[k][0]; // zamieniamy miejscami dane z kolumny prawych hstron 
 			b -> data[k][0] = b -> data[wmax][0];
 			b -> data[wmax][0] = btmp;
 		}
@@ -37,11 +38,9 @@ int eliminate (Matrix *mat, Matrix *b) {
 			for ( int j = k ; j < col; j++) 
 				mat -> data[w][j] -= mat -> data[k][j]*wsp;
 			
-			//printf ("%lf ", mat -> data[w][k]);
 	  
 			b -> data[w][0] -=  b -> data[k][0] * wsp;
 		}
-		//printf("\n");
  	
 	}
 
